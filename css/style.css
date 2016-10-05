@@ -14,8 +14,21 @@ body {
   background-color: silver;
 }
 
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.important-font {
+  font-size: 55px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
 
 .title-container {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
+  text-shadow: 0px 0px 6px #000;
   color: white;
   text-align: center;
   margin-top: 250px;
@@ -23,7 +36,7 @@ body {
 }
 
 .col-lg-5 {
-  margin-left: 340px;
+  margin-left: 310px;
 }
 
 .results_page {
@@ -38,7 +51,7 @@ body {
 
 .carousel-caption h3, p{
   color: #fff !important;
-  font-family: Raleway;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 900;
   text-shadow: 0px 0px 6px #000;
 }
