@@ -6,32 +6,82 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  <video poster="assets/Beach-Ball.jpg" id="beachball" playsinline autoplay muted loop>
-    <source src="assets/Beach-Ball.webm" type="video/webm">
-    <source src="assets/Beach-Ball.mp4" type="video/mp4">
-
-  </video>
-
-  <nav class="navbar navbar-default">
+  <!-- <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Vacations</a>
       </div>
     </div>
-  </nav>
-  <div class="super-container">
-    <div class="title-container">
-      <h1>Looking for an Adventure?</h>
+  </nav> -->
+<div class="results_page">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active">
+      </li>
+      <li data-target="#myCarousel" data-slide-to="0">
+      </li>
+      <li data-target="#myCarousel" data-slide-to="0">
+      </li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="assets/palmTrees.jpg" alt="trees">
+        <div class="carousel-caption">
+          <h3>Tropical Location</h3>
+          <p>Beautiful palm trees</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="assets/rome.jpg" alt="building">
+        <div class="carousel-caption">
+          <h3>Rome</h3>
+          <p>Beautiful Rome</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="assets/thailand.jpg" alt="water">
+        <div class="carousel-caption">
+          <h3>Thailand</h3>
+          <p>Beautiful water and boat</p>
+        </div>
+      </div>
     </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">next</span>
+    </a>
+  </div>
+</div>
+<div class="initial_page">
+  <video poster="assets/Beach-Ball.jpg" id="beachball" playsinline autoplay muted loop>
+    <source src="assets/Beach-Ball.webm" type="video/webm">
+    <source src="assets/Beach-Ball.mp4" type="video/mp4">
+  </video>
+
+
+  <div class="container">
+    <div class="title-container">
+      <h1>Looking for an Adventure?</h1>
+    </div>
+
+    <form>
     <div class="col-lg-5">
       <input type="text" class="form-control" id="ex3" placeholder="Type something in!">
     </div>
-    <button type="button" class="btn btn-primary">Go</button>
+    <button type="submit" class="btn btn-primary">Go</button>
+    </form>
   </div>
-
- 
-  
+</div>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
