@@ -30,10 +30,13 @@ $('.navbar-brand').on('click', function() {
   
 }) 
 
+
+
 //activate our random bubbles
 function activateRandomBubbles() {
     
     (function makeDiv() {
+
       //randomize size and color of our bubbles
         var divsize = ((Math.random() * 100) + 200).toFixed();
         var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
@@ -80,7 +83,7 @@ function activateRandomBubbles() {
 
         };
 
-        $(".thought-bubble-one").html("<p>Here's an idea!</p>");
+        $(".thought-bubble-one").html("<p>Here's an idea!</p><p>Connect with other ideas!</p>");
     })();
 
     (function makeDiv() {
@@ -96,8 +99,8 @@ function activateRandomBubbles() {
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-        var fadeInTime = Math.floor(Math.random() * 2000);
-        var fadeOutTime = Math.floor(Math.random() * 4000);
+        var fadeInTime = Math.floor((Math.random() * 4000) + 2000);
+        var fadeOutTime = Math.floor((Math.random() * 8000) + 3000);
         
         if($('.results_page').is(':visible')) {
 
@@ -109,7 +112,7 @@ function activateRandomBubbles() {
               'left': posx + 'px',
               'top': posy + 'px',
               'display': 'none'
-          }).appendTo('body').fadeIn(fadeInTime).delay(300).fadeOut(fadeOutTime, function() {
+          }).appendTo('body').fadeIn(fadeInTime).delay(1000).fadeOut(fadeOutTime, function() {
               
               $(this).remove();
              
@@ -118,7 +121,7 @@ function activateRandomBubbles() {
 
           });
           
-          $(".thought-bubble-two").html("<p>Here's another idea!</p>");
+          $(".thought-bubble-two").html("<p>Here's another idea!</p><p>Connect with other ideas!</p>");
 
         };
 
@@ -161,7 +164,7 @@ function activateRandomBubbles() {
               
           });
 
-          $(".thought-bubble-three").html("<p>Random idea!</p>");
+          $(".thought-bubble-three").html("<p>Random idea!</p><p>Connect with other ideas!</p>");
 
         };
 
