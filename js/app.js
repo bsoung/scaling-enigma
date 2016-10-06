@@ -1,8 +1,7 @@
 $(document).ready(function() {
-  searchItem();
+    searchItem();
+    dropDown();
 })
-var GLOBAL = "Hi";
-
 
 //receive our JSON data
 function getJson(url) {
@@ -11,48 +10,75 @@ function getJson(url) {
         url: url,
         success: function(response) {
           response.data.children.forEach(function(child) {
-            state.results.push(child.data.title);
+            var package = {};
+            package.title = child.data.title;
+            package.url = child.data.url;
+            state.results.push(package);
           })
           activateRandomBubbles();
         }
     })
 }
 
-function searchItem() {
-  $('form').submit(function(e) {
-    e.preventDefault();
-    var searchTerm;
-    searchTerm = $("input").val();
-    getJson("https://www.reddit.com/r/all/search.json?q=" + searchTerm + "&sort=relevance&t=all");
-    $('.initial_page').hide();
-    $('.results_page').show();
+function dropDown() {
 
-    console.log(searchTerm);
-  })
+    $(".dropdown-menu li a").click(function(){
+
+      $(".btn-option:first-child").text($(this).text());
+      $(".btn-option:first-child").val($(this).text());
+       selectMode();
+   });
+  };
+
+function selectMode() {
+  var chosen;
+      if ($(".btn-option:first-child").text() === "Fresh") {
+        chosen = "hour";
+      } else if ($(".btn-option:first-child").text() === "Recent") {
+        chosen = "month";
+      } else if ($(".btn-option:first-child").text() === "Old") {
+        chosen = "year";
+      } else {
+        chosen = "all";
+      }
+    return chosen;
 }
 
-var LAST_NUMBER = 0;
-function randomChoice() {
-  var sentence;
-  var randomIndex = Math.floor(Math.random() * state.results.length);
-  if (randomIndex != LAST_NUMBER) {
-    sentence = state.results[randomIndex];
-    LAST_NUMBER = randomIndex;
+function searchItem() {
+    $('form').submit(function(e) {
+    e.preventDefault();
+    var searchTerm;
+    var chosenMode = selectMode();
+    console.log(chosenMode);
+    searchTerm = $("input").val();
+    getJson("https://www.reddit.com/r/all/search.json?q=" + searchTerm + "&sort=relevance&t=" + chosenMode);
+    $('.initial_page').hide();
+    $('.results_page').show();
+    })
   }
-  return sentence;
+
+function randomChoice() {
+
+  var randomIndex = Math.floor(Math.random() * state.results.length);
+  if (state.results.length > 0) {
+    var dynamicDuo = state.results[randomIndex];
+    LAST_NUMBER = randomIndex;
+    return dynamicDuo;
+  }
 }
 
 //temporary fix to go back to first page
 $('.navbar-brand').on('click', function() {
   $('.initial_page').show();
   $('.results_page').hide();
-
+  state.results = [];
 })
 
 //activate our random bubbles
 function activateRandomBubbles() {
     (function makeDiv() {
-      var randomSentence = randomChoice();
+      var randomSentence = randomChoice().title;
+      var sentenceURL = randomChoice().url;
 
       //randomize size and color of our bubbles
         var divsize = ((Math.random() * 100) + 200).toFixed();
@@ -99,11 +125,12 @@ function activateRandomBubbles() {
 
         };
 
-        $(".thought-bubble-one").html('<p>' + randomSentence + '</p>');
+        $(".thought-bubble-one").html("<a href=" + sentenceURL + 'target="_top"><p>' + randomSentence + "</p></a>");
     })();
 
     (function makeDiv() {
-        var randomSentence = randomChoice();
+        var randomSentence = randomChoice().title;
+        var sentenceURL = randomChoice().url;
         var divsize = ((Math.random() * 100) + 200).toFixed();
         var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
         $newdiv = $('<div class="thought-bubble-two bubble-text"/>').css({
@@ -137,14 +164,15 @@ function activateRandomBubbles() {
 
           });
 
-          $(".thought-bubble-two").html("<p>" + randomSentence + "</p>");
+          $(".thought-bubble-two").html("<a href=" + sentenceURL + 'target="_top"><p>' + randomSentence + "</p></a>");
 
         };
 
     })();
 
     (function makeDiv() {
-      var randomSentence = randomChoice();
+      var randomSentence = randomChoice().title;
+      var sentenceURL = randomChoice().url;
         var divsize = ((Math.random() * 100) + 200).toFixed();
         var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
         $newdiv = $('<div class="thought-bubble-three bubble-text"/>').css({
@@ -163,7 +191,6 @@ function activateRandomBubbles() {
         var fadeOutTime = Math.floor((Math.random() * 6000) + 3000);
 
         if($('.results_page').is(':visible')) {
-          console.log("visible")
 
           $newdiv.css({
               'border': '1px solid white',
@@ -180,14 +207,15 @@ function activateRandomBubbles() {
 
           });
 
-          $(".thought-bubble-three").html("<p>" + randomSentence + "</p>");
+          $(".thought-bubble-three").html("<a href=" + sentenceURL + 'target="_top"><p>'  + randomSentence + "</p></a>");
 
         };
 
     })();
 
     (function makeDiv() {
-      var randomSentence = randomChoice();
+      var randomSentence = randomChoice().title;
+      var sentenceURL = randomChoice().url;
         var divsize = ((Math.random() * 100) + 200).toFixed();
         var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
         $newdiv = $('<div class="thought-bubble-four bubble-text"/>').css({
@@ -206,7 +234,6 @@ function activateRandomBubbles() {
         var fadeOutTime = Math.floor((Math.random() * 6000) + 3000);
 
         if($('.results_page').is(':visible')) {
-          console.log("visible")
 
           $newdiv.css({
               'border': '1px solid white',
@@ -223,7 +250,7 @@ function activateRandomBubbles() {
 
           });
 
-          $(".thought-bubble-four").html("<p>" + randomSentence + "</p>");
+          $(".thought-bubble-four").html("<a href=" + sentenceURL + 'target="_top"><p>'  + randomSentence + "</p></a>");
 
         };
 

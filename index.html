@@ -70,18 +70,32 @@
                 <source src="assets/Ideas.mp4" type="video/mp4">
                 <source src="assets/Ideas.ogv" type="video/ogv">
             </video>
-            <div class="form-container">
-                <div class="title-container">
-                    <h1><span class="important-font">Inspiration</span></h1>
+
+            <form>
+                <div class="vertical-center important-font">
+                    <h1>Inspiration</h1>
                     <p>noun | in.spi.ra.tion | a force or influence that inspires someone</p>
                 </div>
-                <form>
-                    <div class="col-lg-5">
-                        <input type="text" class="form-control" id="ex3" placeholder="What are you interested in?">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Go</button>
-                </form>
-            </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="What are you interested in">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Go!</button>
+                    </span>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle btn-option" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Default
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Fresh</a></li>
+                        <li><a href="#">Recent</a></li>
+                        <li><a href="#">Old</a></li>
+                        <li><a href="#">Default</a></li>
+                    </ul>
+                </div>
+            </form>
+
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
