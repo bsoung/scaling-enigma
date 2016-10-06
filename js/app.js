@@ -59,6 +59,7 @@ function activateRandomBubbles() {
 
           //assign our css the randomized attributes
           $newdiv.css({
+              'opacity':'0.5',
               'border': '1px solid white',
               'border-radius': '100%',
               'position': 'absolute',
@@ -101,6 +102,7 @@ function activateRandomBubbles() {
         if($('.results_page').is(':visible')) {
 
           $newdiv.css({
+              'opacity':'0.5',
               'border': '1px solid white',
               'border-radius': '100%',
               'position': 'absolute',
@@ -144,6 +146,7 @@ function activateRandomBubbles() {
           console.log("visible")
 
           $newdiv.css({
+              'opacity':'0.5',
               'border': '1px solid white',
               'border-radius': '100%',
               'position': 'absolute',
@@ -159,6 +162,49 @@ function activateRandomBubbles() {
           });
 
           $(".thought-bubble-three").html("<p>Random idea!</p>");
+
+        };
+
+    })();
+
+    (function makeDiv() {
+        var divsize = ((Math.random() * 100) + 200).toFixed();
+        var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
+        $newdiv = $('<div class="thought-bubble-four bubble-text"/>').css({
+            'width': divsize + 'px',
+            'height': divsize + 'px',
+            'background-color': color
+        });
+
+       
+
+
+        var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+        var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+
+        var fadeInTime = Math.floor((Math.random() * 2000) + 500);
+        var fadeOutTime = Math.floor((Math.random() * 4000) + 1000);
+        
+        if($('.results_page').is(':visible')) {
+          console.log("visible")
+
+          $newdiv.css({
+              'opacity':'0.5',
+              'border': '1px solid white',
+              'border-radius': '100%',
+              'position': 'absolute',
+              'left': posx + 'px',
+              'top': posy + 'px',
+              'display': 'none'
+          }).appendTo('body').fadeIn(fadeInTime).delay(50).fadeOut(fadeOutTime, function() {
+              
+              $(this).remove();
+              
+              makeDiv();
+              
+          });
+
+          $(".thought-bubble-four").html("<p>Did you think of this?</p>");
 
         };
 
