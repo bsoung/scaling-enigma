@@ -110,12 +110,14 @@ function activateRandomBubbles() {
 
         $newdiv.mouseenter(function() {
             $(this).addClass('circle-style');
+            $(this).addClass('hvr-bounce-in');
             
         })
 
         $newdiv.mouseleave(function() {
           $(this).removeClass('circle-style');
-        }) 
+          $(this).removeClass('hvr-bounce-in')
+        })   
 
         //randomize x and y coordinates of our bubble minus divsize from total
         //document size so we don't go out of bounds
@@ -155,7 +157,7 @@ function activateRandomBubbles() {
         };
         // $(".thought-bubble-one").html("'<p>Hello!</p>'");
 
-        $(".thought-bubble-one").html('<a class="hvr-bounce-in" href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
+        $(".thought-bubble-one").html('<a href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
 
 
 
@@ -186,12 +188,14 @@ function activateRandomBubbles() {
 
         $newdiv.mouseenter(function() {
             $(this).addClass('circle-style');
+            $(this).addClass('hvr-bounce-in');
             
         })
 
         $newdiv.mouseleave(function() {
           $(this).removeClass('circle-style');
-        }) 
+          $(this).removeClass('hvr-bounce-in')
+        })  
 
         if ($('.results_page').is(':visible')) {
 
@@ -211,7 +215,7 @@ function activateRandomBubbles() {
 
             });
 
-            $(".thought-bubble-two").html('<a class="hvr-bounce-in" href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
+            $(".thought-bubble-two").html('<a href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
 
         };
 
@@ -232,12 +236,14 @@ function activateRandomBubbles() {
 
         $newdiv.mouseenter(function() {
             $(this).addClass('circle-style');
+            $(this).addClass('hvr-bounce-in');
             
         })
 
         $newdiv.mouseleave(function() {
           $(this).removeClass('circle-style');
-        }) 
+          $(this).removeClass('hvr-bounce-in')
+        })  
 
 
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
@@ -263,7 +269,7 @@ function activateRandomBubbles() {
 
             });
 
-            $(".thought-bubble-three").html('<a class="hvr-bounce-in" href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
+            $(".thought-bubble-three").html('<a href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
 
             $(".thought-bubble-three").mouseenter(function() {
                 // console.log($(this));
@@ -289,11 +295,13 @@ function activateRandomBubbles() {
 
         $newdiv.mouseenter(function() {
             $(this).addClass('circle-style');
+            $(this).addClass('hvr-bounce-in');
             
         })
 
         $newdiv.mouseleave(function() {
           $(this).removeClass('circle-style');
+          $(this).removeClass('hvr-bounce-in')
         }) 
 
 
@@ -320,13 +328,9 @@ function activateRandomBubbles() {
 
             });
 
-            $(".thought-bubble-four").html('<a class="hvr-bounce-in" href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
+            $(".thought-bubble-four").html('<a href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
 
-            $(".thought-bubble-four").mouseenter(function() {
-                // console.log($(this));
-                $(".thought-bubble-four hover-style").css('z-index', 9999);
-
-            });
+            
         };
 
     })();
@@ -346,11 +350,13 @@ function activateRandomBubbles() {
 
         $newdiv.mouseenter(function() {
             $(this).addClass('circle-style');
+            $(this).addClass('hvr-bounce-in');
             
         })
 
         $newdiv.mouseleave(function() {
           $(this).removeClass('circle-style');
+          $(this).removeClass('hvr-bounce-in')
         }) 
 
 
@@ -377,13 +383,9 @@ function activateRandomBubbles() {
 
             });
 
-            $(".thought-bubble-five").html('<a class="hvr-bounce-in" href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
+            $(".thought-bubble-five").html('<a href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
 
-            $(".thought-bubble-five").mouseenter(function() {
-                // console.log($(this));
-                $(".thought-bubble-five hover-style").css('z-index', 9999);
-
-            });
+            
         };
 
     })();
