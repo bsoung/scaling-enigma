@@ -3,6 +3,8 @@ $(document).ready(function() {
     dropDown();
 })
 
+
+
 //receive our JSON data
 function getJson(url) {
     $.ajax({
@@ -73,6 +75,12 @@ $('.navbar-brand').on('click', function() {
     state.results = [];
 })
 
+
+
+
+
+
+
 //activate our random bubbles
 function activateRandomBubbles() {
 
@@ -89,7 +97,7 @@ function activateRandomBubbles() {
         var sentenceURL = randomResult.url;
 
         //randomize size and color of our bubbles
-        var divsize = ((Math.random() * 200) + 200).toFixed();
+        var divsize = ((Math.random() * 200) + 150).toFixed();
         var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
 
         //create new div ready to be used later
@@ -99,13 +107,20 @@ function activateRandomBubbles() {
             'background-color': color
         });
 
+        $newdiv.mouseenter(function() {
+            console.log("hi")
+            $(this).addClass('test');
+            
+
+        })
+
         //randomize x and y coordinates of our bubble minus divsize from total
         //document size so we don't go out of bounds
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
         //randomize the fade in and fade out times for our bubble
-        var fadeInTime = Math.floor((Math.random() * 3000) + 500);
+        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
         var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
 
         //Check to see if results is showing otherwise stop function
@@ -113,7 +128,7 @@ function activateRandomBubbles() {
 
             //assign our css the randomized attributes
             $newdiv.css({
-                'border': '1px solid white',
+                'border': '1px solid black',
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -125,16 +140,24 @@ function activateRandomBubbles() {
                 //remove any old created divs
                 $(this).remove();
 
-                //recursively call our function again to continue making bubbles
-                makeDivOne();
+                $(this).mouseenter(function() {
+                    // console.log($(this));
+                    console.log(9999);
+
+                })
 
 
             });
 
         };
         // $(".thought-bubble-one").html("'<p>Hello!</p>'");
-        console.log(randomSentence);
+
         $(".thought-bubble-one").html('<a class="hvr-bounce-in" href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
+
+
+
+
+
     })();
 
     (function makeDivTwo() {
@@ -142,7 +165,7 @@ function activateRandomBubbles() {
         var randomSentence = randomResult.title;
         var sentenceURL = randomResult.url;
 
-        var divsize = ((Math.random() * 200) + 200).toFixed();
+        var divsize = ((Math.random() * 200) + 150).toFixed();
         var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
         $newdiv = $('<div class="thought-bubble-two bubble-text"/>').css({
             'width': divsize + 'px',
@@ -154,13 +177,21 @@ function activateRandomBubbles() {
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-        var fadeInTime = Math.floor((Math.random() * 3000) + 500);
+        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
         var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
+
+
+        $newdiv.mouseenter(function() {
+            console.log("hi")
+            $(this).addClass('test');
+
+
+        })
 
         if ($('.results_page').is(':visible')) {
 
             $newdiv.css({
-                'border': '1px solid white',
+                'border': '10px solid blue',
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -186,7 +217,7 @@ function activateRandomBubbles() {
         var randomSentence = randomResult.title;
         var sentenceURL = randomResult.url;
 
-        var divsize = ((Math.random() * 200) + 200).toFixed();
+        var divsize = ((Math.random() * 200) + 150).toFixed();
         var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
         $newdiv = $('<div class="thought-bubble-three bubble-text"/>').css({
             'width': divsize + 'px',
@@ -194,13 +225,18 @@ function activateRandomBubbles() {
             'background-color': color
         });
 
+        $newdiv.mouseenter(function() {
+            console.log("hi")
+            $(this).addClass('test');
 
+
+        })
 
 
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-        var fadeInTime = Math.floor((Math.random() * 3000) + 500);
+        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
         var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
 
         if ($('.results_page').is(':visible')) {
@@ -222,6 +258,11 @@ function activateRandomBubbles() {
 
             $(".thought-bubble-three").html('<a class="hvr-bounce-in" href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
 
+            $(".thought-bubble-three").mouseenter(function() {
+                // console.log($(this));
+                $(".thought-bubble-three hover-style").css('z-index', 9999);
+
+            });
         };
 
     })();
@@ -231,7 +272,7 @@ function activateRandomBubbles() {
         var randomSentence = randomResult.title;
         var sentenceURL = randomResult.url;
 
-        var divsize = ((Math.random() * 200) + 200).toFixed();
+        var divsize = ((Math.random() * 200) + 150).toFixed();
         var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
         $newdiv = $('<div class="thought-bubble-four bubble-text"/>').css({
             'width': divsize + 'px',
@@ -239,13 +280,18 @@ function activateRandomBubbles() {
             'background-color': color
         });
 
+        $newdiv.mouseenter(function() {
+            console.log("hi")
+            $(this).addClass('test');
 
+
+        })
 
 
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-        var fadeInTime = Math.floor((Math.random() * 3000) + 500);
+        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
         var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
 
         if ($('.results_page').is(':visible')) {
@@ -267,6 +313,11 @@ function activateRandomBubbles() {
 
             $(".thought-bubble-four").html('<a class="hvr-bounce-in" href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
 
+            $(".thought-bubble-four").mouseenter(function() {
+                // console.log($(this));
+                $(".thought-bubble-four hover-style").css('z-index', 9999);
+
+            });
         };
 
     })();
@@ -276,7 +327,7 @@ function activateRandomBubbles() {
         var randomSentence = randomResult.title;
         var sentenceURL = randomResult.url;
 
-        var divsize = ((Math.random() * 200) + 200).toFixed();
+        var divsize = ((Math.random() * 200) + 150).toFixed();
         var color = '#' + Math.round(0xffffff * Math.random()).toString(16);
         $newdiv = $('<div class="thought-bubble-five bubble-text"/>').css({
             'width': divsize + 'px',
@@ -284,13 +335,18 @@ function activateRandomBubbles() {
             'background-color': color
         });
 
+        $newdiv.mouseenter(function() {
+            console.log("hi")
+            $(this).addClass('test');
 
+
+        })
 
 
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-        var fadeInTime = Math.floor((Math.random() * 3000) + 500);
+        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
         var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
 
         if ($('.results_page').is(':visible')) {
@@ -312,11 +368,16 @@ function activateRandomBubbles() {
 
             $(".thought-bubble-five").html('<a class="hvr-bounce-in" href="' + sentenceURL + '" target="_blank"><p class="hover-style">' + randomSentence + "</p></a>");
 
+            $(".thought-bubble-five").mouseenter(function() {
+                // console.log($(this));
+                $(".thought-bubble-five hover-style").css('z-index', 9999);
+
+            });
         };
 
     })();
 
-    
+
 }
 
 
