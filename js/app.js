@@ -133,7 +133,7 @@ function activateRandomBubbles() {
 
             //assign our css the randomized attributes
             $newdiv.css({
-               
+                'border':'1px solid white',
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -200,7 +200,7 @@ function activateRandomBubbles() {
         if ($('.results_page').is(':visible')) {
 
             $newdiv.css({
-               
+                'border':'1px solid white',
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -255,7 +255,7 @@ function activateRandomBubbles() {
         if ($('.results_page').is(':visible')) {
 
             $newdiv.css({
-              
+                'border':'1px solid white',
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -314,7 +314,7 @@ function activateRandomBubbles() {
         if ($('.results_page').is(':visible')) {
 
             $newdiv.css({
-              
+                'border':'1px solid white',
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -369,7 +369,7 @@ function activateRandomBubbles() {
         if ($('.results_page').is(':visible')) {
 
             $newdiv.css({
-    
+                'border':'1px solid white',
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
