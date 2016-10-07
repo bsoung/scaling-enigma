@@ -19,6 +19,10 @@ form {
   margin-top: 300px;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 /* button {
   float: right;
   display: inline-block;
@@ -91,6 +95,12 @@ form {
   display: none;
   float: left;
   width: 1220px;
+}
+
+.hover-style {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 60px;
 }
 
 /* .carousel-inner img {
