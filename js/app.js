@@ -72,6 +72,7 @@ function randomChoice() {
 $('.navbar-brand').on('click', function() {
     $('.initial_page').show();
     $('.results_page').hide();
+    $('.bubble-text').hide();
     state.results = [];
 })
 
@@ -108,11 +109,13 @@ function activateRandomBubbles() {
         });
 
         $newdiv.mouseenter(function() {
-            console.log("hi")
-            $(this).addClass('test');
+            $(this).addClass('circle-style');
             
-
         })
+
+        $newdiv.mouseleave(function() {
+          $(this).removeClass('circle-style');
+        }) 
 
         //randomize x and y coordinates of our bubble minus divsize from total
         //document size so we don't go out of bounds
@@ -128,7 +131,7 @@ function activateRandomBubbles() {
 
             //assign our css the randomized attributes
             $newdiv.css({
-                'border': '1px solid black',
+               
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -182,16 +185,18 @@ function activateRandomBubbles() {
 
 
         $newdiv.mouseenter(function() {
-            console.log("hi")
-            $(this).addClass('test');
-
-
+            $(this).addClass('circle-style');
+            
         })
+
+        $newdiv.mouseleave(function() {
+          $(this).removeClass('circle-style');
+        }) 
 
         if ($('.results_page').is(':visible')) {
 
             $newdiv.css({
-                'border': '10px solid blue',
+               
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -226,11 +231,13 @@ function activateRandomBubbles() {
         });
 
         $newdiv.mouseenter(function() {
-            console.log("hi")
-            $(this).addClass('test');
-
-
+            $(this).addClass('circle-style');
+            
         })
+
+        $newdiv.mouseleave(function() {
+          $(this).removeClass('circle-style');
+        }) 
 
 
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
@@ -242,7 +249,7 @@ function activateRandomBubbles() {
         if ($('.results_page').is(':visible')) {
 
             $newdiv.css({
-                'border': '1px solid white',
+              
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -281,11 +288,13 @@ function activateRandomBubbles() {
         });
 
         $newdiv.mouseenter(function() {
-            console.log("hi")
-            $(this).addClass('test');
-
-
+            $(this).addClass('circle-style');
+            
         })
+
+        $newdiv.mouseleave(function() {
+          $(this).removeClass('circle-style');
+        }) 
 
 
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
@@ -297,7 +306,7 @@ function activateRandomBubbles() {
         if ($('.results_page').is(':visible')) {
 
             $newdiv.css({
-                'border': '1px solid white',
+              
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',
@@ -336,11 +345,13 @@ function activateRandomBubbles() {
         });
 
         $newdiv.mouseenter(function() {
-            console.log("hi")
-            $(this).addClass('test');
-
-
+            $(this).addClass('circle-style');
+            
         })
+
+        $newdiv.mouseleave(function() {
+          $(this).removeClass('circle-style');
+        }) 
 
 
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
@@ -352,7 +363,7 @@ function activateRandomBubbles() {
         if ($('.results_page').is(':visible')) {
 
             $newdiv.css({
-                'border': '1px solid white',
+    
                 'border-radius': '100%',
                 'position': 'absolute',
                 'left': posx + 'px',

@@ -42,8 +42,9 @@ a:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.test {
+.circle-style {
   z-index: 9999;
+  border: 6px solid white;
 }
 
 .title-container p {
@@ -63,13 +64,6 @@ a:hover {
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }
-
-.thought-bubble-one {
-  background-color: green;
-  border: 6px solid red;
-}
-
-
 
 
 /* .container {
@@ -109,8 +103,7 @@ a:hover {
 
 .hover-style {
   text-align: center;
-  margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 /* .carousel-inner img {
