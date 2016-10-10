@@ -125,8 +125,8 @@ function activateRandomBubbles() {
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
         //randomize the fade in and fade out times for our bubble
-        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
-        var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
+        var fadeInTime = Math.floor((Math.random() * 4000) + 500);
+        var fadeOutTime = Math.floor((Math.random() * 4000) + 500);
 
         //Check to see if results is showing otherwise stop function
         if ($('.results_page').is(':visible')) {
@@ -140,7 +140,7 @@ function activateRandomBubbles() {
                 'top': posy + 'px',
                 'display': 'none'
                     //then append to some part of our body
-            }).appendTo('body').fadeIn(fadeInTime).delay(1).fadeOut(fadeOutTime, function() {
+            }).appendTo('body').fadeIn(fadeInTime).delay(5000).fadeOut(fadeOutTime, function() {
 
                 //remove any old created divs
                 $(this).remove();
@@ -182,8 +182,8 @@ function activateRandomBubbles() {
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
-        var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
+        var fadeInTime = Math.floor((Math.random() * 4000) + 500);
+        var fadeOutTime = Math.floor((Math.random() * 4000) + 500);
 
 
         $newdiv.mouseenter(function() {
@@ -206,7 +206,7 @@ function activateRandomBubbles() {
                 'left': posx + 'px',
                 'top': posy + 'px',
                 'display': 'none'
-            }).appendTo('body').fadeIn(fadeInTime).delay(1).fadeOut(fadeOutTime, function() {
+            }).appendTo('body').fadeIn(fadeInTime).delay(5000).fadeOut(fadeOutTime, function() {
 
                 $(this).remove();
 
@@ -249,8 +249,8 @@ function activateRandomBubbles() {
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
-        var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
+        var fadeInTime = Math.floor((Math.random() * 4000) + 500);
+        var fadeOutTime = Math.floor((Math.random() * 4000) + 500);
 
         if ($('.results_page').is(':visible')) {
 
@@ -261,7 +261,7 @@ function activateRandomBubbles() {
                 'left': posx + 'px',
                 'top': posy + 'px',
                 'display': 'none'
-            }).appendTo('body').fadeIn(fadeInTime).delay(1).fadeOut(fadeOutTime, function() {
+            }).appendTo('body').fadeIn(fadeInTime).delay(5000).fadeOut(fadeOutTime, function() {
 
                 $(this).remove();
 
@@ -308,8 +308,8 @@ function activateRandomBubbles() {
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
-        var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
+        var fadeInTime = Math.floor((Math.random() * 4000) + 500);
+        var fadeOutTime = Math.floor((Math.random() * 4000) + 500);
 
         if ($('.results_page').is(':visible')) {
 
@@ -320,7 +320,7 @@ function activateRandomBubbles() {
                 'left': posx + 'px',
                 'top': posy + 'px',
                 'display': 'none'
-            }).appendTo('body').fadeIn(fadeInTime).delay(1).fadeOut(fadeOutTime, function() {
+            }).appendTo('body').fadeIn(fadeInTime).delay(5000).fadeOut(fadeOutTime, function() {
 
                 $(this).remove();
 
@@ -363,8 +363,8 @@ function activateRandomBubbles() {
         var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
         var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
 
-        var fadeInTime = Math.floor((Math.random() * 1000) + 500);
-        var fadeOutTime = Math.floor((Math.random() * 8000) + 5000);
+        var fadeInTime = Math.floor((Math.random() * 4000) + 500);
+        var fadeOutTime = Math.floor((Math.random() * 4000) + 500);
 
         if ($('.results_page').is(':visible')) {
 
@@ -375,7 +375,7 @@ function activateRandomBubbles() {
                 'left': posx + 'px',
                 'top': posy + 'px',
                 'display': 'none'
-            }).appendTo('body').fadeIn(fadeInTime).delay(1).fadeOut(fadeOutTime, function() {
+            }).appendTo('body').fadeIn(fadeInTime).delay(5000).fadeOut(fadeOutTime, function() {
 
                 $(this).remove();
 
