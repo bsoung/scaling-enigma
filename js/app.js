@@ -1,4 +1,6 @@
-var state = require('./data');
+var state = {
+  results: []
+}
 
 
 $(document).ready(function() {
@@ -58,6 +60,7 @@ function searchItem() {
         var chosenMode = selectMode();
         console.log(chosenMode);
         searchTerm = $("input").val();
+
         getJson("https://www.reddit.com/r/all/search.json?q=" + searchTerm + "&sort=relevance&t=" + chosenMode);
         $('.initial_page').hide();
         $('.results_page').show();
