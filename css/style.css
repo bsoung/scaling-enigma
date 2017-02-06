@@ -24,11 +24,6 @@ a:hover {
 }
 
 
-/* button {
-  float: right;
-  display: inline-block;
-} */
-
 .dropdown {
   padding-top: 20px;
 }
@@ -65,12 +60,6 @@ a:hover {
   -webkit-font-smoothing: antialiased;
 }
 
-
-/* .container {
-  margin-top: -40px;
-  width: 100%;
-  padding-left: 0;
-} */
 
 .fa-share {
   font-size: 20px;
@@ -110,19 +99,6 @@ a:hover {
   padding-top: 40px;
 }
 
-/* .carousel-inner img {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-} */
-
-/*.carousel-caption h3, p{
-  color: #fff !important;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 900;
-  text-shadow: 0px 0px 6px #000;
-}
-*/
 
 
 @media (max-width: 600px) {

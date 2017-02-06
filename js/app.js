@@ -1,3 +1,6 @@
+var state = require('./data');
+
+
 $(document).ready(function() {
     searchItem();
     dropDown();
@@ -11,11 +14,13 @@ function getJson(url) {
         type: "GET",
         url: url,
         success: function(response) {
-            state.results = response.data.children.map(function(child) {
-                var package = {};
-                package.title = child.data.title;
-                package.url = child.data.url;
-                return package;
+            state.results = response.data.children.map((child) => {
+                console.log(this);
+                var packages = {};
+                packages.title = child.data.title;
+                packages.url = child.data.url;
+                return packages;
+
             })
             activateRandomBubbles();
         }
@@ -75,10 +80,6 @@ $('.navbar-brand').on('click', function() {
     $('.bubble-text').hide();
     state.results = [];
 })
-
-
-
-
 
 
 
